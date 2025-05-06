@@ -1,7 +1,99 @@
 h1 {
-    color:black;
+    color: white;
     padding:15px;
-    background-color:#EFDEC0; 
-    border:2px solid gray;
     font-family: "Verdana", "Arial", "Sans-serif";
+    position: relative;
+    text-align: center;
+    z-index: 1;
 }
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  html, body {
+    height: 100%;
+    font-family: "Verdana", "Arial", "Sans-serif";
+    overflow: hidden;
+  }
+
+.container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+  }
+
+.ocean {
+    position: absolute;
+    width: 100%;
+    height: 40%;
+    bottom: 0;
+    background: conic-gradient(
+      from 90deg at 50% 125%,
+      #021e34,
+      #055ca7,
+      #052b4c,
+      #003b90,
+      #00174a
+    );
+  }
+
+  .sky {
+    position: absolute;
+    width: 100%;
+    height: 60%;
+    top: 0;
+    left: 0;
+    background-image: linear-gradient(
+      0deg,
+      hsl(205deg 55% 42%) 0%,
+      hsl(207deg 58% 40%) 4%,
+      hsl(210deg 63% 37%) 9%,
+      hsl(213deg 69% 35%) 15%,
+      hsl(216deg 80% 32%) 21%,
+      hsl(215deg 98% 27%) 28%,
+      hsl(215deg 96% 25%) 35%,
+      hsl(214deg 94% 23%) 42%,
+      hsl(212deg 91% 20%) 49%,
+      hsl(208deg 88% 16%) 56%,
+      hsl(210deg 89% 16%) 63%,
+      hsl(213deg 91% 15%) 70%,
+      hsl(216deg 93% 15%) 76%,
+      hsl(220deg 96% 15%) 82%,
+      hsl(220deg 98% 14%) 87%,
+      hsl(218deg 97% 13%) 91%,
+      hsl(215deg 95% 13%) 95%,
+      hsl(211deg 94% 12%) 98%,
+      hsl(206deg 93% 11%) 100%
+    );
+  }
+
+  .sun {
+  position: absolute;
+  width: 60px;
+  height: 60px;
+  top: 95%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: radial-gradient(circle, #fff2d6 20%, #d89766 25%, transparent 55%);
+  }
+  
+  /* Sun reflection */
+  .sun-reflection {
+    position: absolute;
+    width: 100%;
+    height: 40%;
+    bottom: 0;
+    background: conic-gradient(
+      from 168deg at top,
+      #d89766 0deg 20deg,
+      #0000 21deg
+    );
+    -webkit-mask: linear-gradient(#0000, #000);
+    mask-image: linear-gradient(#0000, #000);
+  }
